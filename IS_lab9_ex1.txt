@@ -1,0 +1,48 @@
+EXERCIȚIUL 1 - LABORATOR 9
+
+(1) Concepte identificate:
+- Profesor
+- Student
+- Student cu taxă
+- Notă
+- Secretară
+- Solicitant
+- Autentificare
+- Rapoarte
+
+(2) Clase de domeniu:
+- Profesor
+- Student
+- StudentCuTaxa
+- Secretara
+- Nota
+- Raport
+- User
+
+(3) Relații de moștenire:
+- StudentCuTaxa este o specializare a clasei Student.
+- User este o generalizare pentru clasele Student, StudentCuTaxa, Profesor și Secretara.
+- Relațiile sunt de tip „is-a” (moștenire).
+
+(4) Relații de asociere:
+- Profesorul gestionează o colecție de Note.
+- Secretara generează o colecție de Rapoarte.
+- Profesorul poate distribui Rapoarte.
+- Studentul deține o colecție de Note.
+
+(5) Proprietăți esențiale pentru fiecare clasă:
+- Profesor: idProfesor, nume
+- Student: idStudent, nume
+- User: nume, parola
+- Nota: dataAdaugare, valoare
+- Raport: dataGenerare, descriere
+
+(6) Cazuri de utilizare:
+1. Profesorul înregistrează sau actualizează o Notă.
+2. Profesorul, Studentul și Secretara pot vizualiza Notele.
+3. Secretara generează un Raport.
+4. Profesorul distribuie un Raport.
+5. Studentul deține o Notă.
+6. Utilizatorul trebuie să se autentifice pentru a accesa funcționalitățile aplicației.
+
+(7) Diagrama clasei va fi reprezentată grafic într-o poză separată.
