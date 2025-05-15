@@ -1,0 +1,118 @@
+Ex 1
+
+Un student poate fi inscris la unul sau mai multe seminare.
+Mai multi studenti(sau niciunul) pot fi adaugați pe lista de asteptare pentru un seminar.
+Un profesor poate preda la unul sau mai multe seminare sau sa nu predea deloc.
+
+Ex 2
+
+class Identificare {
+    protected String titlu;
+    protected int numar;
+
+    public Identificare(String titlu, int numar) {
+        this.titlu = titlu;
+        this.numar = numar;
+    }
+
+    public String getTitlu() {
+        return titlu;
+    }
+
+    public void setTitlu(String titlu) {
+        this.titlu = titlu;
+    }
+
+    public int getNumar() {
+        return numar;
+    }
+
+    public void setNumar(int numar) {
+        this.numar = numar;
+    }
+}
+
+class Sectiune extends Identificare {
+    public Sectiune(String titlu, int numar) {
+        super(titlu, numar);
+    }
+}
+
+class Capitol extends Identificare {
+    private String rezumat;
+    private List<Sectiune> sectiuni;
+
+    public Capitol(String titlu, int numar, String rezumat, ArrayList<Sectiune> sectiuni) {
+        super(titlu, numar);
+        this.rezumat = rezumat;
+        this.sectiuni = sectiuni;
+    }
+
+    public void adaugaSectiune(Sectiune sectiune) {
+        this.sectiuni.add(sectiune);
+    }
+
+    public String getRezumat() {
+        return rezumat;
+    }
+
+    public void setRezumat(String rezumat) {
+        this.rezumat = rezumat;
+    }
+}
+
+class Parte extends Identificare {
+    private List<Capitol> capitole;
+
+    public Parte(String titlu, int numar, ArrayList<Capitol> capitole) {
+        super(titlu, numar);
+        this.capitole = capitole;
+    }
+
+    public void adaugaCapitol(Capitol capitol) {
+        this.capitole.add(capitol);
+    }
+}
+
+class Carte {
+    private String editor;
+    private String dataPublicare;
+    private String ISBN;
+    private List<Parte> parti;
+
+    public Carte(String editor, String dataPublicare, String ISBN) {
+        this.editor = editor;
+        this.dataPublicare = dataPublicare;
+        this.ISBN = ISBN;
+        this.parti = new ArrayList<>();
+    }
+
+    public void adaugaParte(Parte parte) {
+        this.parti.add(parte);
+    }
+
+    public String getEditor() {
+        return editor;
+    }
+
+    public void setEditor(String editor) {
+        this.editor = editor;
+    }
+
+    public String getDataPublicare() {
+        return dataPublicare;
+    }
+
+    public void setDataPublicare(String dataPublicare) {
+        this.dataPublicare = dataPublicare;
+    }
+
+    public String getISBN() {
+        return ISBN;
+    }
+
+    public void setISBN(String ISBN) {
+        this.ISBN = ISBN;
+    }
+}
+
